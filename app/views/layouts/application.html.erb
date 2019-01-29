@@ -1,16 +1,147 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>AlphaBlog</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
 
-  <body>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
-  </body>
+<title>AlphaBlog</title>
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<%= csrf_meta_tags %>
+
+</head>
+
+<body>
+
+<%= render 'layouts/navigation' %>
+
+<%= render 'layouts/messages' %>
+
+<div class="container">
+
+<%= yield %>
+
+</div>
+
+<%= render 'layouts/footer' %>
+
+</body>
+
 </html>
+
+Below is what the custom.css.scss file looks like:
+
+$navbar-default-bg: black;
+
+@import "bootstrap-sprockets";
+
+@import "bootstrap";
+
+#logo {
+
+float: left;
+
+font-size: 1.7em;
+
+color: #fff;
+
+text-transform: uppercase;
+
+letter-spacing: -1px;
+
+font-weight: bold;
+
+}
+
+#logo:hover {
+
+color: #fff;
+
+text-decoration: none;
+
+}
+
+.center {
+
+text-align: center;
+
+}
+
+.jumbotron {
+
+background-image: asset-url('new_cover_page.png');
+
+background-size: cover;
+
+height: 550px;
+
+}
+
+.jumbotron h1 {
+
+color: #fff;
+
+text-align: center;
+
+margin-bottom: 30px;
+
+letter-spacing: -1px;
+
+font-weight: bold;
+
+}
+
+.btn-xlarge {
+
+font-size: 1.7em;
+
+background-color: black;
+
+}
+
+footer {
+
+margin-top: 45px;
+
+padding-top: 5px;
+
+border-top: 1px solid #eaeaea;
+
+color: #777;
+
+}
+
+footer a:hover {
+
+color: #222;
+
+}
+
+footer small {
+
+float: left;
+
+}
+
+footer ul {
+
+float: right;
+
+list-style: none;
+
+}
+
+footer ul li {
+
+float: left;
+
+margin-left: 15px;
+
+}
+
+
+
+Below is what the _footer.html.erb file looks like:
